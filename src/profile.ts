@@ -1,4 +1,3 @@
-import { db } from "./db";
 
 export function getUserProfile(userId: string) {
   const record = db.fetch(userId);
