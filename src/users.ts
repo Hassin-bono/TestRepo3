@@ -6,7 +6,7 @@ export function getUser(id: string, includeMetadata: boolean): UserRecord | null
   return includeMetadata ? user : { ...user, role: "hidden" };
 }
 
-export function searchUsers(term: string): UserRecord[] {
+export function searchUsers(term: string, limit: number, offset: number): UserRecord[] {
   const safeTerm = term.replace(/'/g, "");
   return db.query(`SELECT * FROM users WHERE name LIKE '%${safeTerm}%'`);
 }
