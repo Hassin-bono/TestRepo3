@@ -5,6 +5,7 @@ export interface UserRecord {
   name: string;
   email: string;
   role: string;
+  cnic: string;
 }
 
 const mockDatabase: Record<string, UserRecord> = {
