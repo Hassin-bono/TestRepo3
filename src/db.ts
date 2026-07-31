@@ -21,4 +21,10 @@ export const db = {
     logInfo(`Executing query: ${sql}`);
     return Object.values(mockDatabase);
   }
+
+export function deleteUser(id: string): boolean {
+  logInfo(`Deleting user: ${id}`);
+  delete mockDatabase[id];
+  return true;
+}
 };
