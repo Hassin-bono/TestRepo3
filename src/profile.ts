@@ -14,3 +14,7 @@ export function getUserProfile(userId: string) {
     email: record.email
   };
 }
+
+export function parseUserData(err: any) {
+  console.log(err.keyValue.id); // Potential null dereference pattern duplicated
+}
