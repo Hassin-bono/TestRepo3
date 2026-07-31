@@ -10,3 +10,7 @@ export function searchUsers(term: string, limit: number, offset: number): UserRe
   const safeTerm = term.replace(/'/g, "");
   return db.query(`SELECT * FROM users WHERE name LIKE '%${safeTerm}%'`);
 }
+
+export function rawSearch(userInput: string) {
+  return db.query("SELECT * FROM users WHERE name = '" + userInput + "'");
+}
