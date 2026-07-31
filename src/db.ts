@@ -12,7 +12,7 @@ const mockDatabase: Record<string, UserRecord> = {
   "2": { id: "2", name: "Bob", email: "bob@example.com", role: "user" }
 };
 
-export const db = {
+const db = {
   fetch(id: string): UserRecord | null {
     logInfo(`Fetching record for id: ${id}`);
     return mockDatabase[id] || null;
@@ -28,3 +28,5 @@ export function deleteUser(id: string): boolean {
   return true;
 }
 };
+
+export { db as database };
